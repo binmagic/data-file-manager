@@ -64,13 +64,13 @@ addFile(path: string, callback: Callback, parser?: (data: string) => any): void
 
 ```typescript
 class Data {
-    private a: any;	// 存放数据a
-    private b: any;	// 存放数据b
+    private a: any; // 存放数据a
+    private b: any; // 存放数据b
     private c: any; // 存放数据c
 
-    public readA(event: string, data: any) { this.a = data };	// 文件a改变会回调
-    public readB(event: string, data: any) { this.b = data };	// 文件b改变会回调
-    public readC(event: string, data: any) { this.c = data };	// 文件c改变会回调
+    public readA(event: string, data: any) { this.a = data }; // 文件a改变会回调
+    public readB(event: string, data: any) { this.b = data }; // 文件b改变会回调
+    public readC(event: string, data: any) { this.c = data }; // 文件c改变会回调
 }
 ```
 
@@ -103,9 +103,9 @@ DataFileManager.addFile("c", data.readC);
 假设`Data`文件中提供了解析方式：
 
 ```typescript
-public static parseA(data: string): any { /* ... */ }	// 解析数据a
-public static parseB(data: string): any { /* ... */ }	// 解析数据b
-public static parseC(data: string): any { /* ... */ }	// 解析数据c
+public static parseA(data: string): any { /* ... */ } // 解析数据a
+public static parseB(data: string): any { /* ... */ } // 解析数据b
+public static parseC(data: string): any { /* ... */ } // 解析数据c
 ```
 
 设置个别解析器：
