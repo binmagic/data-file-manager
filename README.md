@@ -53,7 +53,7 @@ addFile(path: string, callback: Callback, parser?: (data: string) => any): void
 | Parameter | Type                                 | Default   | Description                    |
 | --------- | ------------------------------------ | --------- | ------------------------------ |
 | path      | `string`                             |           | 监视的文件路径，相对于root路径 |
-| callback  | `(event: string, data: any) => void` |           | 文件变更时的回调函数           |
+| callback  | `(data: any, event: string) => void` |           | 文件变更时的回调函数           |
 | parser    | ` (data: string) => any`             | undefined | 此文件的解析器                 |
 
 

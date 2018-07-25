@@ -1,6 +1,6 @@
 import { watch } from "chokidar";
-import { isAbsolute, resolve, relative } from "path";
 import { readFileSync } from "fs";
+import { isAbsolute, relative, resolve } from "path";
 
 type Callback = (event: string, data: any) => void;
 interface Handler {
@@ -26,6 +26,7 @@ export class DataFileManager {
 
     public static addFile(path: string, callback: Callback, parser?: (data: string) => any): void {
         DataFileManager.registered.set(path, { callback, parser });
+        this.onAllEvent("first", resolve(DataFileManager.root, path));
     }
 
     private static onAllEvent(event: string, path: string): void {
@@ -34,7 +35,7 @@ export class DataFileManager {
         if (!handler) return;
 
         const data: any = event === "unlink" ? null : DataFileManager.parseFile(path, handler);
-        handler.callback(event, data);
+        handler.callback(data, event);
     }
 
     private static parseFile(path: string, handler: Handler): any {

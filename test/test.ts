@@ -17,7 +17,7 @@ DataFileManager.addFile("b", (event: string, data: string) => {
 // 自定义解析器
 DataFileManager.addFile(
     "c",
-    (event: string, data: string) => {
+    (data: string, event: string) => {
         console.log("customize parser, content", data);
     },
     (data: string) => {
