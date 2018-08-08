@@ -68,9 +68,9 @@ class Data {
     private b: any; // 存放数据b
     private c: any; // 存放数据c
 
-    public readA(event: string, data: any) { this.a = data }; // 文件a改变会回调
-    public readB(event: string, data: any) { this.b = data }; // 文件b改变会回调
-    public readC(event: string, data: any) { this.c = data }; // 文件c改变会回调
+    public readA(data: any, event: string) { this.a = data }; // 文件a改变会回调
+    public readB(data: any, event: string) { this.b = data }; // 文件b改变会回调
+    public readC(data: any, event: string) { this.c = data }; // 文件c改变会回调
 }
 ```
 
